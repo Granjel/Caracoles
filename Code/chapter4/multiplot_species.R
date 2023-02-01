@@ -25,7 +25,7 @@ leg <-
   ggplot(nd_fd, aes(x = year, y = FD)) + 
   geom_point(aes(color = species, shape = species), size = 3) + 
   scale_shape_manual(values = c(16, 16, 21, 16, 16, 16, 21, 21, 21, 16, 21, 21, 21, 16, 16, 21, 21, 21)) +
-  labs(x = "Year", y = "Fitness differences", shape = "Species", color = "Species") +
+  labs(x = "Year", y = "Species' fitness", shape = "Species", color = "Species") +
   guides(color = guide_legend(ncol = 3), shape = guide_legend(ncol = 3)) +
   theme_bw() +
   theme(panel.grid = element_blank(),
@@ -45,7 +45,7 @@ p1 <-
   ggplot(nd_fd, aes(x = ND, y = FD)) + 
   geom_point(aes(color = factor(species), shape = factor(core)), size = 3) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
-  labs(x = "Niche differences", y = "Fitness differences", shape = "Species", color = "Species") +
+  labs(x = "Species' niche", y = "Species' fitness", shape = "Species", color = "Species") +
   scale_shape_manual(name = "Core\nspecies?", values = c(1, 16)) +
   scale_x_continuous(limits = c(1, 4), breaks = seq(1, 4, 0.5)) +
   guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 1)) +
@@ -67,7 +67,7 @@ p2 <-
   #geom_point(aes(color = factor(species), shape = factor(species)), size = 3) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
   geom_line(data = subset(nd_fd, core == "Yes"), aes(x = year, y = FD, group = species, color = species), alpha = 0.3) +
-  labs(x = "Year", y = "Fitness differences", shape = "Species", color = "Species") +
+  labs(x = "Year", y = "Species' fitness", shape = "Species", color = "Species") +
   scale_shape_manual(name = "Core\nspecies?", values = c(1, 16)) +
   #scale_shape_manual(values = rep(15:18, len = 18)) +
   guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 1)) +
@@ -87,7 +87,7 @@ p2 <-
 #  ggplot(nd_fd, aes(y = year, x = ND)) + 
 #  geom_point(aes(color = factor(species), shape = factor(species)), size = 3) +
 #  geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
-#  labs(y = "Year", x = "Niche differences", shape = "Species", color = "Species") +
+#  labs(y = "Year", x = "Species' niche", shape = "Species", color = "Species") +
 #  scale_shape_manual(values = rep(15:18, len = 18)) +
 #  scale_x_continuous(limits = c(1, 4), breaks = seq(1, 4, 0.5)) +
 #  guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 2)) +
@@ -101,7 +101,7 @@ p3 <-
   ggplot(nd_fd, aes(x = year, y = ND)) + 
   geom_point(aes(color = factor(species), shape = factor(core)), size = 3) +
   geom_line(data = subset(nd_fd, core == "Yes"), aes(x = year, y = ND, group = species, color = species), alpha = 0.3) +
-  labs(x = "Year", y = "Niche differences", color = "Species") +
+  labs(x = "Year", y = "Species' niche", color = "Species") +
   scale_y_continuous(limits = c(1, 4), breaks = seq(1, 4, 0.5)) +
   scale_shape_manual(name = "Core\nspecies?", values = c(1, 16)) +
   guides(color = guide_legend(ncol = 2), shape = guide_legend(ncol = 1)) +

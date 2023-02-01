@@ -45,3 +45,6 @@ nd_fd <- cbind(nd_fd, func)
 
 write.csv(nd_fd, file = "Results/all_elements.csv", row.names = FALSE)
 
+
+
+

@@ -28,7 +28,7 @@ ggplot(nd_fd, aes(x = ND, y = FD, color = factor(year))) +
   geom_point(aes(shape = core), size = 3) +
   stat_ellipse(geom = "polygon", aes(fill = factor(year)), level = 0.95, alpha = 0.3, type = "t") +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +
-  labs(x = "Niche differences", y = "Fitness differences", fill = "Year", color = "Year") +
+  labs(x = "Species' niche", y = "Species' fitness", fill = "Year", color = "Year") +
   scale_fill_manual(values = c("#009e73", "#f0e442", "#0072b2", "#d55e00", "#cc79a7")) +
   scale_color_manual(values = c("#009e73", "#f0e442", "#0072b2", "#d55e00", "#cc79a7")) +
   scale_shape_manual(name = "Core\nspecies?", values = c(1, 16)) +
